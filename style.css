@@ -1,0 +1,543 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+body {
+  font-family: 'Work Sans', sans-serif;
+  background-color: #FEFEFE;
+}
+
+nav {
+  float: right;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  float: left;
+  position: relative;
+}
+
+nav ul li a {
+  display: block;
+  padding: 0 20px;
+  line-height: 70px;
+  background: #ffffff;
+  color: #463f3f;
+  text-decoration: none;
+  /*
+  The full path of this code is nav ul li a:not(:only-child):after. This means that the code will apply to any a tag in our nav list that is NOT an only child, aka any dropdown. The :after means it comes after the output of the tag. I’ve decided that to specify any nav item as a dropdown, it will be followed by a unicode arrow – ▾ (#9662).
+  */
+}
+
+nav ul li a:hover {
+  background: #f2f2f2;
+  color: #fb5958;
+}
+
+nav ul li a:not(:only-child):after {
+  padding-left: 4px;
+  content: " ▾";
+}
+
+nav ul li ul li {
+  min-width: 190px;
+}
+
+nav ul li ul li a {
+  padding: 15px;
+  line-height: 20px;
+}
+
+.nav-dropdown {
+  position: absolute;
+  z-index: 1;
+  /* Guarantees that the dropdown will display on top of any content. */
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+  display: none;
+}
+
+.nav-mobile {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #fff;
+  height: 70px;
+  width: 70px;
+}
+
+@media only screen and (max-width: 950px) {
+  .nav-mobile {
+    display: block;
+  }
+
+  nav {
+    width: 100%;
+    padding: 70px 0 15px;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  nav ul li {
+    float: none;
+  }
+
+  nav ul li a {
+    padding: 15px;
+    line-height: 20px;
+  }
+
+  nav ul li ul li a {
+    padding-left: 30px;
+  }
+}
+#nav-toggle {
+  position: absolute;
+  left: 18px;
+  top: 22px;
+  cursor: pointer;
+  padding: 10px 35px 16px 0px;
+}
+
+#nav-toggle span,
+#nav-toggle span:before,
+#nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: #463f3f;
+  position: absolute;
+  display: block;
+  content: "";
+  transition: all 300ms ease-in-out;
+}
+
+#nav-toggle span:before {
+  top: -10px;
+}
+
+#nav-toggle span:after {
+  bottom: -10px;
+}
+
+#nav-toggle.active span {
+  background-color: transparent;
+}
+
+#nav-toggle.active span:before, #nav-toggle.active span:after {
+  top: 0;
+}
+
+#nav-toggle.active span:before {
+  transform: rotate(45deg);
+}
+
+#nav-toggle.active span:after {
+  transform: rotate(-45deg);
+}
+
+@media screen and (min-width: 950px) {
+  .nav-list {
+    display: block !important;
+  }
+}
+/* 
+.navigation – the outer wrapper for the navbar. Specifies the height and color, and will stretch the full width of the viewport.
+*/
+.navigation {
+  height: 70px;
+  background: #ffffff;
+}
+
+/*
+.nav-container – the inner wrapper for the navbar. Defines how far the actual content should stretch.
+*/
+.nav-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.brand {
+  position: absolute;
+  padding-left: 20px;
+  float: left;
+  line-height: 70px;
+  text-transform: uppercase;
+  font-size: 1.4em;
+}
+
+.brand a,
+.brand a:visited {
+  color: #463f3f;
+  text-decoration: none;
+}
+.wrapper{
+    width: 100%;
+    height: 500px;
+    margin: auto;
+    margin-bottom: 50px;
+    width: 100%;   
+    overflow: hidden;
+    box-shadow: 10px 25px 30px rgba(0,0,0,0.3);
+}
+
+.wrapper img {
+    position:   static  ;
+    width:100%;
+    height:500px;
+}
+.wrapper h2 {
+    font-family: 'comic sans ms';
+    font-weight: 300;
+    font-size: 45px;
+    text-align: center;
+    text-shadow: 3px 2px 1px grey;
+    color: #ffffff;
+    line-height: 50px;
+    position:relative  ;
+    left: 20px;
+    top: 20%;
+    right: 20px;
+}
+
+.wrapper p{
+    position: relative          ;
+    left: 45%;
+    top: 400px;
+}
+
+a.tbl-biru {
+    background: #3f72af;
+    border-radius: 20px;
+    margin-top: 100px;
+    padding: 15px 20px 15px 20px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+a.tbl-biru:hover {
+    background: #fc5185;
+    text-decoration: none;
+}
+
+a.tbl-pink {
+    background: #fc5185;
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 15px 20px 15px 20px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+a.tbl-pink:hover {
+    background: #3f72af;
+    text-decoration: none;
+}
+.courses1{
+    margin-right: 30px;
+    margin-bottom: 10%;
+}
+.courses2{
+    margin-top: 10%;
+ margin-right: 30px;
+ margin-bottom: 10%;
+    }
+.courses3{
+    margin-top: 10%;
+    margin-right: 30px;
+}
+.kolom1 {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'comic sans ms';
+    color: #364f6b;
+}
+
+.kolom1 .deskripsi {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'comic sans ms';
+    color: #364f6b;
+}
+
+.gambar1 img {
+        height: 250px;
+        float: left;
+        margin: 10px 50px 50px 40px;
+        border-radius: 8px;
+        box-shadow: 10px 25px 30px rgba(0,0,0,0.3)
+}
+.gambar2 img {
+        height: px;
+        float: left;
+        margin: 10px 50px 50px 40px;
+        border-radius: 8px;
+        box-shadow: 10px 25px 30px rgba(0,0,0,0.3)
+        }
+.kolom p {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'comic sans ms';
+}
+article {
+    width: 100%;
+    height: auto;
+    margin: 5px 5px 5px 5px;
+    clear: both;
+    float: none;
+}
+
+article p {
+    padding: 5px 5px 5px 5px;
+    line-height: 1.5;  
+}
+article .konten {
+    width: 24.4%;
+    height: auto;
+    margin: 5px 5px 5px 5px;
+    border-radius: 3px;
+    border: 1px solid gainsboro;
+    float: left;
+}
+
+article .isi {
+    width: 100%;
+    height: auto;
+    margin: 5px 5px 5px 5px;
+    border-radius: 3px;
+    border: 1px solid gainsboro;
+    float: left;
+}
+article .isi .judul {
+    font-size: xx-large;
+    font-family: 'comic sans ms';
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+article .isi p {
+    margin-top: 0;
+}
+article .isi img {
+    float: left;
+    margin: 5px 5px 5px 5px;
+}
+
+article .konten img {
+    width: 95.8%;
+    height: 95%;
+    margin: 5px 5px 5px 5px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 10px 25px 30px rgba(0,0,0,0.3);
+
+}
+article .konten:hover {
+    opacity:0.9;
+
+}
+article .konten .judul a {
+    margin-left: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size:x-large;
+    color:#020101;
+}
+
+article .konten a:hover {
+    opacity:0.9;
+}
+
+.deskripsi {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'comic sans ms';
+    color: #364f6b;
+    float: none;
+}
+.kolom2{
+    float: none;
+}
+.tengah {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 5%;
+    
+}
+.kolom2{
+    text-align: center;
+    margin-top: 60%;
+}
+
+.tutor-list {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.kartu-tutor {
+    width: 20%;
+    margin: 0 auto;
+}
+
+.kartu-tutor img {
+    width: 80%;
+    border-radius: 50%;
+}
+
+.kartu-tutor p {
+    font-family: 'comic sans ms';
+    font-weight: 800;
+    font-size: 25px;
+    text-align: center;
+    color: #364f6b;
+}
+
+.partner-list {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.kartu-partner {
+    width: 20%;
+    margin: 0 auto;
+}
+
+.kartu-partner img {
+    width: 150px;
+    border-radius: 50%;
+}
+
+
+.container {
+  max-width: 1080px;
+  margin: auto;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+ul {
+  list-style: none;
+}
+.footer {
+  background-color: rgba(27, 27, 27, 1);
+  padding: 70px 0;
+}
+.footer-col {
+  width: 33%;
+  padding: 0 15px;
+}
+.footer-col h4 {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 1);
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-weight: 500;
+  position: relative;
+}
+.footer-col h4::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: rgba(0, 3, 255, 0.8);
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+.footer-col ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+.footer-col ul li a {
+  font-size: 16px;
+  text-transform: capitalize;
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+  font-weight: 300;
+  color: #bbbbbb;
+  display: block;
+  transition: all 0.3s ease;
+}
+.anggota{
+    font-size: 16px;
+    text-transform: capitalize;
+    line-height: 2;
+    color: rgba(255, 255, 255, 1);
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+}
+.footer-col ul li a:hover {
+  color: rgba(0, 3, 255, 0.8);
+  padding-left: 8px;
+}
+.fixed-footer {
+    width: 100%;
+    position: relative;
+    background: #333;
+    margin: 0 10px 10px 0;
+    padding: 10px 0;
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+  }
+  .fixed-footer {
+    bottom: 0;
+  }
+  
+/*responsive*/
+@media (max-width:1080pc){
+}
+@media (max-width: 767px) {
+  .footer-col {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+  article .konten {
+    float: none;
+    width: 90%;
+    margin-left: 18px;
+  }
+  .kolom1 p{
+    text-align: center;
+  }
+  .kolom1 h3{
+    text-align: center;
+  }
+  .wrapper img{
+    height: 300px;
+  }
+  .wrapper {
+    height: 300px;
+  }
+  .gambar1 img {
+    margin-left: 10px;
+  }
+  }
+
+
+@media (max-width: 574px) {
+  .footer-col {
+    width: 100%;
+  }
+}
